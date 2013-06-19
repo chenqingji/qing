@@ -1,0 +1,30 @@
+<?php
+
+return array (
+	'blacklist_choose' => 'Choice', 
+	'blacklist_filter' => 'Filtrate blacklist ', 
+	'blacklist_matchmod' => 'Match mode', 
+	'blacklist_fuzz_match' => 'Fuzzy match', 
+	'blacklist_exact_match' => 'Exact match', 
+	'blacklist_null' => 'empty', 
+	'blacklist_title_add' => 'Add blacklist', 
+	'blacklist_label_add' => 'black list:', 
+	'blacklist_add_tip' => 'Can enter the mailbox name,the domain name; Chinese does not support fuzzy matching; not check for the fuzzy match;domain name is prefixed with \'@\' when exact match', 
+	'blacklist_title_submit' => 'Add blacklist the sender sent the email will be rejected', 
+	'blacklist_required' => 'Black list should not be empty', 
+	'blacklist_invalid' => 'Illegal blacklist', 
+	'blacklist_choose_to_delete' => 'Please select the blacklists you want to delete', 
+	'blacklist_blank' => 'blank blacklist', 
+	'blacklist_cannot_be_null' => 'Blacklist cannot be empty', 
+	'blacklist_name_invalid' => 'Illegal blacklist', 
+	'blacklist_exists' => 'Have existed in the blacklist, please delete first', 
+	'blacklist_wl_exists' => 'Have existed in the whitelist, please delete first', 
+	'blacklist_max_count' => 'The maximum amount of blacklist is:', 
+	'blacklist_add' => 'Add filtration blacklist', 
+	'blacklist_success' => 'successful', 
+	'blacklist_add_remark' => 'Note: if the Email has associated Email alias or domain alias, please also add to blacklist', 
+	'blacklist_del_success' => 'The filtration blacklist is deleted successfully', 
+	'blacklist_del_remark' => 'Note: if associated Email alias or domain alias of the Email in blacklist, please also delete it', 
+	'blacklist_js_choose_to_delete' => 'Please select the object that you want to delete', 
+	'blacklist_js_confirm_to_delete' => 'Are you sure to delete' 
+);

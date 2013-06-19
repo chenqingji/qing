@@ -1,0 +1,36 @@
+<?php
+
+return array (
+	"password_strengthpwd_lang" => "en", 
+	"password_title" => "Modify Password", 
+	"password_old_password" => "Old Password:", 
+	"password_new_password" => "New Password:", 
+	"password_rule_info" => "Password length of 6-25 bits, including letters, numbers and special characters", 
+	"password_weak" => "Weak", 
+	"password_normal" => "In", 
+	"password_strong" => "Strong", 
+	"password_comfire_password" => "Confirm Password:", 
+	"password_comfire" => "Confirm", 
+	"password_clear" => "Clear", 
+	"password_return" => "Return", 
+	"password_alert_old_psw_empty" => "Old password should not be empty", 
+	"password_alert_old_psw_length_rule" => "Old password must be 6-25 bit", 
+	"password_alert_new_psw_empty" => "New password should not be empty", 
+	"password_alert_new_psw_length_rule" => "New password must be 6-25 bit", 
+	"password_alert_new_psw_contain_space" => "New password can't contain space", 
+	"password_alert_new_psw_contain_tab" => "New password can't contain Tab", 
+	"password_alert_confirm_psw_contain_space" => "Confirm password can't contain space", 
+	"password_alert_confirm_psw_contain_tab" => "Confirm password can't contain Tab", 
+	"password_alert_confirm_psw_empty" => "Confirm password should not be empty", 
+	"password_alert_confirm_psw_length_rule" => "Confirm password must be 6-25 bit", 
+	"password_alert_psw_not_same" => "Passwords do not match，please input again", 
+	"password_can_not_contain_chinese" => "The password you input can't contain Chinese", 
+	"password_alert_psw_weak" => "Password strength is too weak (you may use a pure number / letter / special character, or contains a user name), in order to ensure the security of your account, please reset your password", 
+	"password_sys_save_ok" => "The administrator's password has been modified successfully", 
+	"password_sys_save_failed" => "Modify failed", 
+	"password_sys_old_psw_wrong" => "The old password is incorrect", 
+	"password_sys_comma" => ", ", 
+	"password_sys_is_strong_psw" => "The password you set is strong security", 
+	"password_sys_is_normal_psw" => "The password you set is middle security, we suggest you set strong security password in order to guarantee your account's safety" 
+);
+

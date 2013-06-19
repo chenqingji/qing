@@ -1,0 +1,30 @@
+<?php
+
+return array (
+	'whitelist_choose' => 'Choice', 
+	'whitelist_filter' => 'Filtrate whitelist ', 
+	'whitelist_matchmod' => 'Match mode', 
+	'whitelist_fuzz_match' => 'Fuzzy match', 
+	'whitelist_exact_match' => 'Exact match', 
+	'whitelist_null' => 'empty', 
+	'whitelist_title_add' => 'Add whitelist', 
+	'whitelist_label_add' => 'white list:', 
+	'whitelist_add_tip' => 'Can enter the mailbox name,the domain name; Chinese does not support fuzzy matching; not check for the fuzzy match;domain name is prefixed with \'@\' when exact match', 
+	'whitelist_title_submit' => 'Add whitelist the sender sent the email will be rejected', 
+	'whitelist_required' => 'White list should not be empty', 
+	'whitelist_invalid' => 'Illegal whitelist', 
+	'whitelist_choose_to_delete' => 'Please select the whitelists you want to delete', 
+	'whitelist_blank' => 'blank whitelist', 
+	'whitelist_cannot_be_null' => 'Whitelist cannot be empty', 
+	'whitelist_name_invalid' => 'Illegal whitelist', 
+	'whitelist_exists' => 'Have existed in the whitelist, please delete first', 
+	'whitelist_bl_exists' => 'Have existed in the blacklist, please delete first', 
+	'whitelist_max_count' => 'The maximum amount of whitelist is:', 
+	'whitelist_add' => 'Add filtration whitelist', 
+	'whitelist_success' => 'successful', 
+	'whitelist_add_remark' => 'Note: if the Email has associated Email alias or domain alias, please also add to whitelist', 
+	'whitelist_del_success' => 'The filtration whitelist is deleted successfully', 
+	'whitelist_del_remark' => 'Note: if associated Email alias or domain alias of the Email in whitelist, please also delete it', 
+	'whitelist_js_choose_to_delete' => 'Please select the object that you want to delete', 
+	'whitelist_js_confirm_to_delete' => 'Are you sure to delete' 
+);

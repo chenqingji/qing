@@ -1,0 +1,30 @@
+<?php
+
+return array (
+	'blacklist_choose' => '選擇', 
+	'blacklist_filter' => '過濾黑名單', 
+	'blacklist_matchmod' => '匹配模式', 
+	'blacklist_fuzz_match' => '模糊匹配', 
+	'blacklist_exact_match' => '精確匹配', 
+	'blacklist_null' => '空', 
+	'blacklist_title_add' => '黑名單增加', 
+	'blacklist_label_add' => '新增黑名單：', 
+	'blacklist_add_tip' => '可以輸入二級代理名、域名；中文二級代理、域名不支持模糊匹配；不勾選為模糊匹配；精確匹配時域名以@開頭', 
+	'blacklist_title_submit' => '加入黑名單的發件人所發送的三級代理將被拒收', 
+	'blacklist_required' => '新增黑名單不能為空', 
+	'blacklist_invalid' => '您輸入的黑名單不合法', 
+	'blacklist_choose_to_delete' => '請選擇要刪除的黑名單', 
+	'blacklist_blank' => '空黑名單', 
+	'blacklist_cannot_be_null' => '黑名單不能為空', 
+	'blacklist_name_invalid' => '您輸入的黑名單不合法', 
+	'blacklist_exists' => '已存在於黑名單中，請先刪除', 
+	'blacklist_wl_exists' => '已存在於白名單中，請先刪除', 
+	'blacklist_max_count' => '黑名單最大數目為：', 
+	'blacklist_add' => '增加過濾黑名單', 
+	'blacklist_success' => '成功', 
+	'blacklist_add_remark' => '注：若該黑名單有相關的二級代理別名和域別名二級代理，請同時加入黑名單', 
+	'blacklist_del_success' => '刪除過濾黑名單成功', 
+	'blacklist_del_remark' => '注：若該黑名單有相關的二級代理別名和域別名二級代理也為黑名單，請同時刪除', 
+	'blacklist_js_choose_to_delete' => '請選擇刪除項', 
+	'blacklist_js_confirm_to_delete' => '你確定要刪除嗎' 
+);

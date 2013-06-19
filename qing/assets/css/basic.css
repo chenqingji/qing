@@ -1,0 +1,27 @@
+em.valid, em.wrong, em.warn { margin-bottom: 10px; padding: 20px 20px 15px 60px; display: block; }
+em.warn { background: url(../images/warn.png) no-repeat 15px 10px #EDFCE9; border: 1px solid #CCEAC4; margin-left: 10px;}
+em.valid { background: url(../images/valid.png) no-repeat 15px 10px #EDFCE9; border: 1px solid #CCEAC4; margin-left: 10px;}
+em.wrong { background: url(../images/error.png) no-repeat 15px 10px #FCE9E9; border: 1px solid #EAC7C7; margin-left: 10px;}
+em.wrong, em.error, label.error { color: red; } label.error{ margin-left: 5px; }
+.xhe_default { float: left; }
+.pagination { margin: 20px 0; color: #ccc; } .pagination a, .pagination b, .pagination em { font-weight: normal; margin-right: 10px; } 
+.pagination em { color: #888; }
+.bar { line-height: 31px; }
+
+table { border-spacing: 1; }
+table td { padding: 8px; }
+table thead td { font-size: 1.1em; }
+table tbody td.text { width: 250px; }
+table tbody td input.au { width: auto; }
+table tbody td input, table tbody td textarea, table tbody td select { padding: 5px; }
+table .c { text-align: center; }
+
+table.a td.x { width: 120px; text-align: right; padding: 0; }
+table.a td.t { vertical-align: top; padding-top: 10px; }
+table.a td.x em { color: red; padding: 0 3px;}
+
+table.b tbody.m td { vertical-align: middle; }
+table.b td.chk { width: 10px; text-align: center; }
+table.b td.d { vertical-align:middle; }
+table.b td.select { vertical-align:middle; width:30px;}
+.op { float: right; margin-bottom: 10px; }
