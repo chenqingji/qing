@@ -6,11 +6,58 @@
         Purpose of the stylesheet follows.
 */
 
-.waterfall{overflow: auto;}
-.water-item{opacity:1;border:1px solid #D9D9D9;filter:alpha(opacity=0);position:relative;float:left;width:215px;padding:4px;background:none repeat scroll 0 0 #FFFFFF;;margin:5px 5px 10px;display:inline;word-wrap:break-word;word-break:normal}
-.water-item-bg {background:none repeat scroll 0 0 #FFFFFF;border:1px solid #D9D9D9}
-.water-item .pic{position:relative;width:100%;overflow:hidden;text-align:center}
-.water-item .pic a{display:block}
-.water-item .title{line-height:150%;font-size:12px;font-weight:400}
-.water-item share a{color:#333;margin-right:5px}
-.recommend {border-top: 1px dotted #cccccc;margin-top: 5px;padding: 5px}
+.waterfall{
+        overflow: auto;
+}
+.water-item{
+        opacity:1;
+        border:1px solid #D9D9D9;
+        filter:alpha(opacity=0);
+        position:relative;
+        float:left;
+        width:215px;
+        padding:4px;
+        background:none repeat scroll 0 0 #FFFFFF;
+        margin:5px 5px 10px;
+        display:inline;
+        word-wrap:break-word;
+        word-break:normal
+}
+.water-item-bg {
+        background:none repeat scroll 0 0 #FFFFFF;
+        border:1px solid #D9D9D9
+}
+.water-item .pic{
+        position:relative;
+        width:100%;
+        overflow:hidden;
+        text-align:center
+}
+.water-item .pic a{
+        display:block
+}
+.water-item .title{
+        line-height:150%;
+        font-size:12px;
+        font-weight:400
+}
+.water-item share a{
+        color:#333;
+        margin-right:5px
+}
+.recommend {
+        border-top: 1px dotted #cccccc;
+        margin-top: 5px;
+        padding: 5px
+}
+.loading {
+        background:#c1c39a;
+        color:#303030;
+        font-size:20px;
+        padding:10px;
+        text-align:center;
+        /*width:450px;*/
+        margin:0px auto;
+        display:none;
+        border-radius: 5px;
+}

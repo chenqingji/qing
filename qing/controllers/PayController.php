@@ -213,26 +213,51 @@ class PayController extends SysController {
         }
 
         /**
-         * 上传文件列表
+         * 图片列表
          */
         public function uploadList() {
+                $time = time();
                 $imageDemoService = ServiceFactory::getImageDemoService();
-                $images = $imageDemoService->getAllImage();
+                $images = $imageDemoService->getImageByUpdatedTime($time);
 
                 $tpl = new TemplateEngine();
                 $tpl->assign('images', $images);
+                $allImageHtml = $tpl->fetchHtml('pay_image.tpl');
+                
+                $tpl->assign('allImageHtml',$allImageHtml);
                 $tpl->displayWithMain('pay_uploadList.tpl');
+        }
+        
+        /**
+         * ajax请求获得更多图片
+         */
+        public function getMoreUploadList(){
+                $time = $this->getParamFromRequest('lastupdatedtime',null);
+                if(is_null($time)){
+                        $time = time();
+                }
+                $imageDemoService = ServiceFactory::getImageDemoService();
+                $images = $imageDemoService->getImageByUpdatedTime($time);                
+                $tpl = new TemplateEngine();
+                $tpl->assign('images', $images);
+                $allImageHtml = $tpl->fetchHtml('pay_image.tpl');       
+                echo $allImageHtml;
+                exit;
         }
 
         /**
-         * 外部显示文件列表
+         * 单独页面图片列表
          */
         public function uploadListOuter() {
+                $time = time();
                 $imageDemoService = ServiceFactory::getImageDemoService();
-                $images = $imageDemoService->getAllImage();
+                $images = $imageDemoService->getImageByUpdatedTime($time);
 
                 $tpl = new TemplateEngine();
                 $tpl->assign('images', $images);
+                $allImageHtml = $tpl->fetchHtml('pay_image.tpl');
+                $tpl->assign('allImageHtml',$allImageHtml);
+                
                 $tpl->display('pay_uploadList_outer.tpl');
         }
 

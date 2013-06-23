@@ -59,8 +59,8 @@
 				<h4 class='clearfix'><span>上传文件</span><em></em></h4>
 			    <ul>
 			    	<li><a href='index.php?r=pay/toUpload'>上传照片</a></li>
-			    	<li><a href='index.php?r=pay/uploadList'>照片瀑布</a></li>
-                                <li><a href='index.php?r=pay/uploadListOuter' target="_blank">外部照片瀑布</a></li>
+			    	<li><a href='index.php?r=pay/uploadList'>照片管理</a></li>
+                                <li><a href='index.php?r=pay/uploadListOuter' target="_blank">照片瀑布</a></li>
 			    </ul>
 			</div>
 

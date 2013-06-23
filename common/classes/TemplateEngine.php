@@ -42,6 +42,19 @@ class TemplateEngine extends Smarty {
                 }
                 $this->_isCommentTag = $_isCommentTag;
         }
+        
+        /**
+         * 获得模板数据并不直接显示
+         * @param type $template 模板文件
+         * @param type $cache_id
+         * @param type $compile_id
+         * @param type $parent
+         * @return string
+         */
+        public function fetchHtml($template = null, $cache_id = null, $compile_id = null, $parent = null){
+                $this->setTemplateEngineParameter();
+                return $this->fetch($template,$cache_id,$compile_id,$parent,false);
+        }
 
         /**
          * 模板引擎显示方法,为了支持国际化，根据当前选择语言版本自动编译多个编译版本
@@ -60,11 +73,8 @@ class TemplateEngine extends Smarty {
          * @param type $parent
          */
         public function displayWithMain($template = null, $cache_id = null, $compile_id = null, $parent = null){
-                $this->setTemplateEngineParameter();
-                $rightTemplate = $this->fetch($template, null, null, null, false);
-                
+                $rightTemplate = $this->fetchHtml($template, $cache_id, $compile_id, $parent, false);
                 $this->assign('right',$rightTemplate);
-                
                 $this->setTemplateEngineParameter(true);
                 $this->assign("language", I18nHelper::getCurrentLanguage());
                 $this->fetch('main.tpl', $cache_id, $compile_id, $parent, true);                
@@ -75,7 +85,7 @@ class TemplateEngine extends Smarty {
          * @param type $isMain 是否含有框架页，建议main.tpl存放在views目录下
          */
         private function setTemplateEngineParameter($isMain = false) {
-                $this->_viewPath = (!$isMain && is_null($this->_viewPath)) ? FrameworkUtils::getCurrentControllerId() : '';
+                $this->_viewPath = (!$isMain) ? FrameworkUtils::getCurrentControllerId() : '';
                 $this->template_dir = Yii::getPathOfAlias('application.views.' . $this->_viewPath);
 
                 $appId = FrameworkUtils::getAppId();
