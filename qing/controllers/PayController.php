@@ -33,11 +33,13 @@ class PayController extends SysController {
                 $tpl = new TemplateEngine();
                 $id = $this->getParamFromRequest('id', null);
                 $isEdit = false;
+                $payModel = null;
                 if ($id) {
                         $isEdit = true;
                         $payModel = ServiceFactory::getPayService()->getPayById($id);
-                        $tpl->assign('payModel', $payModel);
                 }
+                $tpl->assign('payModel', $payModel);
+                $tpl->assign('isEdit', $isEdit);
                 $tpl->displayWithMain('pay_edit.tpl');
         }
 

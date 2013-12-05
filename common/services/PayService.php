@@ -90,6 +90,7 @@ class PayService extends ActionService {
          */
         public function updateSortsByIds($payIds, $paySorts) {
                 $sql = "update pay set sort = case id ";
+                $ids = '';
                 foreach ($payIds as $key => $id) {
                         $sql .= " when " . $id . " then " . $paySorts[$key];
                         $ids .= $id . ',';

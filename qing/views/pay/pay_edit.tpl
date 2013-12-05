@@ -49,7 +49,7 @@
 <script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>   
 
 <script type="text/javascript">
-	//$('.wyseditor').xheditor({ upImgUrl:"{$uploadUrl}",upImgExt:"jpg,jpeg,gif,png" });
+	//$('.wyseditor').xheditor({ upImgUrl:"{ $uploadUrl}",upImgExt:"jpg,jpeg,gif,png" });
 
 
 </script>
