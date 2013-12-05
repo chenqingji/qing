@@ -2,7 +2,7 @@
 /**
  * PHPExcel
  *
- * Copyright (c) 2006 - 2012 PHPExcel
+ * Copyright (c) 2006 - 2011 PHPExcel
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,9 +20,9 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2011 PHPExcel (http://www.codeplex.com/PHPExcel)
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.7, 2012-05-19
+ * @version    1.7.6, 2011-02-27
  */
 
 
@@ -33,9 +33,9 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel_Worksheet
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2011 PHPExcel (http://www.codeplex.com/PHPExcel)
  */
-class PHPExcel_Worksheet_CellIterator implements Iterator
+class PHPExcel_Worksheet_CellIterator extends CachingIterator
 {
 	/**
 	 * PHPExcel_Worksheet to iterate
@@ -117,7 +117,7 @@ class PHPExcel_Worksheet_CellIterator implements Iterator
     }
 
     /**
-     * Are there any more PHPExcel_Cell instances available?
+     * More PHPExcel_Cell instances available?
      *
      * @return boolean
      */
@@ -151,9 +151,9 @@ class PHPExcel_Worksheet_CellIterator implements Iterator
     }
 
 	/**
-	 * Set the iterator to loop only existing cells
+	 * Set loop only existing cells
 	 *
-	 * @param	boolean		$value
+	 * @return boolean
 	 */
     public function setIterateOnlyExistingCells($value = true) {
     	$this->_onlyExistingCells = $value;

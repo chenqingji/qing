@@ -2,7 +2,7 @@
 /**
  * PHPExcel
  *
- * Copyright (c) 2006 - 2012 PHPExcel
+ * Copyright (c) 2006 - 2011 PHPExcel
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,9 +20,9 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2011 PHPExcel (http://www.codeplex.com/PHPExcel)
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.7, 2012-05-19
+ * @version    1.7.6, 2011-02-27
  */
 
 
@@ -31,7 +31,7 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2011 PHPExcel (http://www.codeplex.com/PHPExcel)
  */
 class PHPExcel_NamedRange
 {
@@ -82,7 +82,7 @@ class PHPExcel_NamedRange
     public function __construct($pName = null, PHPExcel_Worksheet $pWorksheet, $pRange = 'A1', $pLocalOnly = false, $pScope = null)
     {
     	// Validate data
-    	if (($pName === NULL) || ($pWorksheet === NULL) || ($pRange === NULL)) {
+    	if (is_null($pName) || is_null($pWorksheet)|| is_null($pRange)) {
     		throw new Exception('Parameters can not be null.');
     	}
 
@@ -111,17 +111,17 @@ class PHPExcel_NamedRange
      * @return PHPExcel_NamedRange
      */
     public function setName($value = null) {
-    	if ($value !== NULL) {
+    	if (!is_null($value)) {
     		// Old title
     		$oldTitle = $this->_name;
 
     		// Re-attach
-    		if ($this->_worksheet !== NULL) {
+    		if (!is_null($this->_worksheet)) {
     			$this->_worksheet->getParent()->removeNamedRange($this->_name,$this->_worksheet);
     		}
     		$this->_name = $value;
 
-    		if ($this->_worksheet !== NULL) {
+    		if (!is_null($this->_worksheet)) {
     			$this->_worksheet->getParent()->addNamedRange($this);
     		}
 
@@ -148,7 +148,7 @@ class PHPExcel_NamedRange
      * @return PHPExcel_NamedRange
      */
     public function setWorksheet(PHPExcel_Worksheet $value = null) {
-    	if ($value !== NULL) {
+    	if (!is_null($value)) {
     		$this->_worksheet = $value;
     	}
     	return $this;
@@ -170,7 +170,7 @@ class PHPExcel_NamedRange
      * @return PHPExcel_NamedRange
      */
     public function setRange($value = null) {
-    	if ($value !== NULL) {
+    	if (!is_null($value)) {
     		$this->_range = $value;
     	}
     	return $this;

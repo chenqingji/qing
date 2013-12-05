@@ -2,7 +2,7 @@
 /**
  * PHPExcel
  *
- * Copyright (c) 2006 - 2012 PHPExcel
+ * Copyright (c) 2006 - 2011 PHPExcel
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,9 +20,9 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2011 PHPExcel (http://www.codeplex.com/PHPExcel)
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
- * @version    1.7.7, 2012-05-19
+ * @version    1.7.6, 2011-02-27
  */
 
 
@@ -31,7 +31,7 @@
  *
  * @category   PHPExcel
  * @package    PHPExcel_Shared
- * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @copyright  Copyright (c) 2006 - 2011 PHPExcel (http://www.codeplex.com/PHPExcel)
  */
 class PHPExcel_Shared_ZipStreamWrapper {
 	/**
@@ -71,13 +71,7 @@ class PHPExcel_Shared_ZipStreamWrapper {
     }
 
     /**
-	 * Implements support for fopen().
-	 *
-	 * @param	string	$path			resource name including scheme, e.g.
-	 * @param	string	$mode			only "r" is supported
-	 * @param	int		$options		mask of STREAM_REPORT_ERRORS and STREAM_USE_PATH
-	 * @param	string  &$openedPath	absolute path of the opened stream (out parameter)
-	 * @return	bool    true on success
+     * Open stream
      */
     public function stream_open($path, $mode, $options, &$opened_path) {
         // Check for mode
@@ -101,19 +95,14 @@ class PHPExcel_Shared_ZipStreamWrapper {
     }
 
     /**
-	 * Implements support for fstat().
-	 *
-	 * @return  boolean
+     * Stat stream
      */
     public function stream_stat() {
         return $this->_archive->statName( $this->_fileNameInArchive );
     }
 
     /**
-	 * Implements support for fread(), fgets() etc.
-	 *
-	 * @param   int		$count	maximum number of bytes to read
-	 * @return  string
+     * Read stream
      */
     function stream_read($count) {
         $ret = substr($this->_data, $this->_position, $count);
@@ -122,10 +111,7 @@ class PHPExcel_Shared_ZipStreamWrapper {
     }
 
     /**
-	 * Returns the position of the file pointer, i.e. its offset into the file
-	 * stream. Implements support for ftell().
-	 *
-	 * @return  int
+     * Tell stream
      */
     public function stream_tell() {
         return $this->_position;
@@ -133,8 +119,6 @@ class PHPExcel_Shared_ZipStreamWrapper {
 
     /**
      * EOF stream
-	 *
-	 * @return	bool
      */
     public function stream_eof() {
         return $this->_position >= strlen($this->_data);
@@ -142,10 +126,6 @@ class PHPExcel_Shared_ZipStreamWrapper {
 
     /**
      * Seek stream
-	 *
-	 * @param	int		$offset	byte offset
-	 * @param	int		$whence	SEEK_SET, SEEK_CUR or SEEK_END
-	 * @return	bool
      */
     public function stream_seek($offset, $whence) {
         switch ($whence) {
