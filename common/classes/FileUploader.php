@@ -2,10 +2,12 @@
 
 /**
  * here need a demo
+ * @todo 限制上传图片的宽高
+ * @todo 更好的处理错误输出
  */
 
 /**
- * 文件上传处理类
+ * 文件上传处理类 支持多个文件
  * jm
  */
 class FileUploader {
@@ -72,6 +74,12 @@ class FileUploader {
          * @var int 
          */
         private $_maxsize = 0;
+        
+        /**
+         * 缩略图文件前缀
+         * @var string 
+         */
+        private $_thumbPrefix = 'thumb-';
 
         /**
          * 缩略图宽度
@@ -159,7 +167,7 @@ class FileUploader {
          * @return \FileUploader
          */
         public function setMaxsize($maxsize) {
-                $this->_maxsize = $maxsize ? $maxsize : (1024 * 1024 * 1024);
+                $this->_maxsize = $maxsize ? $maxsize : (1024 * 1024);
                 return $this;
         }
 
@@ -281,7 +289,7 @@ class FileUploader {
                         $files[$key]['name'] = $_uploadFiles[$field]['name'][$key];
 
                         if ($_uploadFiles[$field]['error'][$key]) {
-                                $files[$key]['info'] = 'Reference php upload error message description';
+                                $files[$key]['error'] = 'Reference php upload error message description';
                                 $files[$key]['flag'] = $_uploadFiles[$field]['error'][$key];
                                 continue;
                         }
@@ -293,14 +301,14 @@ class FileUploader {
 
                         //文件类型不允许
                         if (!in_array($fileext, $this->_allowUploadTypes)) {
-                                $files[$key]['info'] = $_uploadFiles[$field]['name'][$key] . ': File extension illegal';
+                                $files[$key]['error'] = $_uploadFiles[$field]['name'][$key] . ': File extension is not '.  implode('|', $this->_allowUploadTypes);
                                 $files[$key]['flag'] = self::FLAG_EXT_ILLEGAL;
                                 continue;
                         }
 
                         //文件大小超出
                         if ($this->_maxsize > 0 && ($filesize > $this->_maxsize)) {
-                                $files[$key]['info'] = $_uploadFiles[$field]['name'][$key] . ': File size more than the maxsize';
+                                $files[$key]['error'] = $_uploadFiles[$field]['name'][$key] . ': File size more than the maxsize '.$this->_maxsize;
                                 $files[$key]['flag'] = self::FLAG_SIZE_OVER;
                                 continue;
                         }
@@ -323,9 +331,9 @@ class FileUploader {
                                         //对图片进行加水印和生成缩略图
                                         if (in_array($fileext, $this->_allowWaterTypes)) {
                                                 $this->createWaterMark($filedir . $filename);
-                                                if ($this->_thumbWidth) {
-                                                        if ($this->createThumb($filedir . $filename, $filedir . 'thumb_' . $filename)) {
-                                                                $files[$key]['thumb'] = 'thumb_' . $filename;
+                                                if ($this->_thumbWidth || $this->_thumbHeight) {
+                                                        if ($this->createThumb($filedir . $filename, $filedir . $this->_thumbPrefix . $filename)) {
+                                                                $files[$key]['thumb'] = $this->_thumbPrefix . $filename;
                                                         } else {
                                                                 $files[$key]['thumb'] = 'make thumb file failed.';
                                                         }
@@ -382,7 +390,8 @@ class FileUploader {
                 }
 
                 //按比例计算缩略图大小
-                if ($sourceFileInfo[0] - $t_width > $sourceFileInfo[1] - $t_height) {
+//                if ($sourceFileInfo[0] - $t_width > $sourceFileInfo[1] - $t_height) {
+                if($t_width){
                         $t_height = ($t_width / $sourceFileInfo[0]) * $sourceFileInfo[1];
                 } else {
                         $t_width = ($t_height / $sourceFileInfo[1]) * $sourceFileInfo[0];
